@@ -40,14 +40,15 @@ npm install
 - Open the `.env.example` file and paste your API key like this:
 
 ```
-VITE_HUGGINGFACE_API_KEY=your_api_key_here
+VITE_HF_API_KEY=your_api_key_here
 ```
 
 - Rename the file from `.env.example` to `.env`:
-
+On linux/unix just write the below command in root directory
 ```bash
 mv .env.example .env
 ```
+For windows manually rename it.
 
 ### 4. Start the Development Server
 
