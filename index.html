@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Dungeon Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobile-setup-button">☰</button>
+                </div>
+                <h1>AI Dungeon Master</h1>
+                <div class="header-right">
+                    <button class="toggle-history" id="desktop-history-button">📜</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="setup-panel">
+                <div class="setup-section">
+                    <h3>Campaign Setup</h3>
+                    <div class="form-group">
+                        <label for="campaign-name">Campaign Name</label>
+                        <input type="text" id="campaign-name" placeholder="Enter campaign name">
+                    </div>
+                    <div class="form-group">
+                        <label for="storyline">Custom Storyline</label>
+                        <textarea id="storyline" placeholder="Describe your starting scenario..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="player-count">Number of Players</label>
+                        <input type="number" id="player-count" min="1" max="6" value="1">
+                    </div>
+                    <button id="start-game">Start Game</button>
+                </div>
+                
+                <div class="setup-section">
+                    <h3>Player Characters</h3>
+                    <div class="form-group">
+                        <label for="char-name">Character Name</label>
+                        <input type="text" id="char-name" placeholder="Enter character name">
+                    </div>
+                    <div class="form-group">
+                        <label for="char-class">Class/Role</label>
+                        <input type="text" id="char-class" placeholder="Enter character class">
+                    </div>
+                    <div class="form-group">
+                        <label for="char-backstory">Backstory (Optional)</label>
+                        <textarea id="char-backstory" placeholder="Describe your character's background..."></textarea>
+                    </div>
+                    <button id="add-player">Add Character</button>
+                    
+                    <div class="player-list" id="player-list">
+                        <!-- Player items will be added here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div id="chat-box" class="chat-box">
+                    <!-- Messages will appear here -->
+                </div>
+                
+                <div class="input-area">
+                    <input type="text" id="player-input" placeholder="What do you do? (Press Enter to send)" autocomplete="off" disabled>
+                    <button id="send-button" disabled>Send</button>
+                </div>
+            </div>
+            
+            <div class="history-container" id="history-container">
+                <div class="history-header">
+                    <h3 class="history-title">Chat History</h3>
+                    <button class="close-history">&times;</button>
+                </div>
+                <ul class="history-list" id="history-list">
+                    <!-- History items will be added here -->
+                </ul>
+                <div class="action-buttons">
+                    <button id="new-chat-button" class="action-button secondary">New Chat</button>
+                    <button id="save-chat-button" class="action-button">Save Current</button>
+                    <button id="clear-history-button" class="action-button danger">Clear All</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <div id="game-status">Setup Incomplete</div>
+            <div>Players: <span id="current-players">0</span>/<span id="max-players">1</span></div>
+            <div>DM: AI (Mistral-7B)</div>
+        </div>
+        
+        <!-- Confirmation Dialog -->
+        <div class="confirmation-dialog" id="confirmation-dialog">
+            <div class="confirmation-content">
+                <div class="confirmation-message" id="confirmation-message">Are you sure?</div>
+                <div class="confirmation-buttons">
+                    <button id="confirm-cancel" class="action-button secondary">Cancel</button>
+                    <button id="confirm-ok" class="action-button danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
